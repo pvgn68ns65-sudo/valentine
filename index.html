@@ -65,7 +65,7 @@
     <div class="celebration" id="celebration">
         <h1 style="font-size: 4rem;">🎉</h1>
         <h1>She said YES! 💕</h1>
-        <p style="margin-top:10px; font-weight:bold; color:#ff4d6d;">I love you so much, Jasmeen! ❤️</p>
+        <p style="margin-top:10px; font-weight:bold; color:#ff4d6d;">See you on the 14th ❤️</p>
     </div>
 
     <script>
@@ -105,15 +105,15 @@
             noBtn.style.top = y + 'px';
 
             // 4. Scale Yes Button (keeps getting bigger)
-            const yesScale = 1 + (attempts * 0.25);
+            const yesScale = 1 + (attempts * 0.15);
             yesBtn.style.transform = `scale(${yesScale})`;
 
-            // 5. Shrink & Fade No Button (Disappears at 9)
-            const noScale = Math.max(0, 1 - (attempts * 0.11)); 
+            // 5. Shrink & Fade No Button (Disappears at 8)
+            const noScale = Math.max(0, 1 - (attempts * 0.08)); 
             noBtn.style.transform = `scale(${noScale})`;
-            noBtn.style.opacity = noScale;
+            
 
-            if (attempts >= 9) {
+            if (attempts >= 8) {
                 noBtn.style.display = 'none';
                 msgDisplay.innerText = "The 'No' button has officially retired! 😉";
             }
@@ -144,3 +144,4 @@
     </script>
 </body>
 </html>
+
