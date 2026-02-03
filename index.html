@@ -94,6 +94,8 @@
 
     <audio id="bgMusic" src="music.mp3" loop></audio>
 
+    <audio id="errorSound" src="error.mp3"></audio>
+
     <div class="heart-bg" id="heartBg"></div>
 
     <div class="polaroid">
@@ -152,6 +154,10 @@
         function moveButton(e) {
             if (e) e.preventDefault();
             playMusic(); // Trigger music on interaction
+            
+            const errorAudio = document.getElementById('errorSound');
+            errorAudio.play();
+            
             attempts++;
             
             const noBtn = document.getElementById('noBtn');
@@ -221,5 +227,6 @@
     </script>
 </body>
 </html>
+
 
 
