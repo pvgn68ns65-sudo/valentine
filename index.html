@@ -187,9 +187,7 @@
             noBtn.style.top = y + 'px';
 
             yesBtn.style.transform = `scale(${1 + (attempts * 0.28)})`;
-            const noScale = Math.max(0, 1 - (attempts * 0.10)); 
-            noBtn.style.transform = `scale(${noScale})`;
-    
+            const noScale = Math.max(0, 1 - (attempts * 0.07));   
 
             if (attempts >= 8) {
                 noBtn.style.display = 'none';
@@ -223,4 +221,5 @@
     </script>
 </body>
 </html>
+
 
