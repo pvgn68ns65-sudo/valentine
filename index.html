@@ -58,23 +58,38 @@
 
         /* Popping Message Style */
         #message { 
-            color: #ff1493; 
-            font-weight: 600; 
-            min-height: 30px; 
-            margin-bottom: 20px; 
-            z-index: 5;
-            text-shadow: 0 0 10px rgba(255, 20, 147, 0.2);
-        }
+    color: #ff1493; 
+    font-weight: 600; 
+    min-height: 30px; 
+    margin-bottom: 20px; 
+    z-index: 5;
+    font-size: 1.5rem; /* Increased from default */
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.4); /* Stronger base glow */
+}
 
-        .message-pop {
-            animation: messagePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+.message-pop {
+    animation: messagePop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-        @keyframes messagePop {
-            0% { transform: scale(0.5); opacity: 0; }
-            50% { transform: scale(1.2); text-shadow: 0 0 20px rgba(255, 20, 147, 0.5); }
-            100% { transform: scale(1); opacity: 1; }
-        }
+@keyframes messagePop {
+    0% { 
+        transform: scale(0.3); 
+        opacity: 0; 
+        text-shadow: 0 0 0px rgba(255, 20, 147, 0);
+    }
+    50% { 
+        transform: scale(1.4); /* Bigger pop! */
+        text-shadow: 0 0 40px rgba(255, 20, 147, 1), 
+                     0 0 80px rgba(255, 20, 147, 0.6),
+                     0 0 120px rgba(255, 20, 147, 0.3); /* Triple glow layers! */
+        filter: brightness(1.3);
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1;
+        text-shadow: 0 0 20px rgba(255, 20, 147, 0.5); /* Keep some glow */
+    }
+}
 
         .button-container { display: flex; gap: 20px; justify-content: center; align-items: center; min-height: 150px; width: 100%; position: relative; }
         
@@ -144,7 +159,7 @@
     <div class="celebration" id="celebration">
         <h1 style="font-size: 4rem;">🎉</h1>
         <h1 style="font-family:'Poppins'">She said YES! 💕</h1>
-        <p style="margin-top:15px; font-weight:600; color:#ff4d6d; font-size: 1.2rem;">I love you forever! ❤️</p>
+        <p style="margin-top:15px; font-weight:600; color:#ff4d6d; font-size: 1.2rem;">See you on the 14th! ❤️</p>
     </div>
 
     <script>
@@ -215,7 +230,6 @@
             yesBtn.style.transform = `scale(${1 + (attempts * 0.28)})`;
             const noScale = Math.max(0, 1 - (attempts * 0.12)); 
             noBtn.style.transform = `scale(${noScale})`;
-            noBtn.style.opacity = noScale;
 
             if (attempts >= 9) {
                 noBtn.style.display = 'none';
@@ -248,3 +262,4 @@
     </script>
 </body>
 </html>
+
